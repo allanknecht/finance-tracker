@@ -258,3 +258,33 @@ Started GET "/assets/application-89a68efd81166db194fd1a0f31c0a3536d8a13673733b12
 Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Started GET "/assets/application-7b34d282421c5cbfec6e832ee6828ebdaaf531ec71d5833c203b08a75767f76d.js" for 172.25.0.1 at 2026-02-13 20:45:47 +0000
 Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 172.25.0.1 at 2026-02-13 20:46:00 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 72.1ms | Allocations: 2569)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms | Allocations: 3126)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-13 20:47:03 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 119.1ms | Allocations: 3238)
+Completed 200 OK in 135ms (Views: 127.9ms | ActiveRecord: 0.0ms | Allocations: 4584)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-13 20:47:14 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 75.2ms | Allocations: 2588)
+Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.0ms | Allocations: 3078)
+
+
