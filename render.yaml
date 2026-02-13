@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: finance-tracker
+    env: ruby
+    plan: free
+    buildCommand: bundle install && bundle exec rails assets:precompile && bundle exec rails db:migrate
+    startCommand: bundle exec puma -C config/puma.rb
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: finance-tracker-db
+          property: connectionString
+    healthCheckPath: /up
+
+databases:
+  - name: finance-tracker-db
+    plan: free
+    databaseName: finance_tracker_production
+    user: finance_tracker_user
