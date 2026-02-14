@@ -288,3 +288,65 @@ Processing by WellcomeController#index as HTML
 Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.0ms | Allocations: 3078)
 
 
+Started GET "/" for 172.25.0.1 at 2026-02-13 22:01:22 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 437.0ms | Allocations: 7020)
+Completed 200 OK in 491ms (Views: 457.6ms | ActiveRecord: 0.0ms | Allocations: 10355)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-13 22:02:22 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 2569)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms | Allocations: 3076)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-13 22:02:30 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 63.9ms | Allocations: 2568)
+Completed 200 OK in 65ms (Views: 64.7ms | ActiveRecord: 0.0ms | Allocations: 3018)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-14 01:27:05 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 87.5ms | Allocations: 2836)
+Completed 200 OK in 92ms (Views: 89.5ms | Allocations: 3652)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-14 01:32:22 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 409.7ms | Allocations: 6602)
+Completed 200 OK in 507ms (Views: 444.2ms | ActiveRecord: 0.0ms | Allocations: 9973)
+
+
+Started GET "/" for 172.25.0.1 at 2026-02-14 01:32:38 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WellcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering wellcome/index.html.erb within layouts/application
+  Rendered wellcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 2569)
+Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.0ms | Allocations: 3083)
+
+
