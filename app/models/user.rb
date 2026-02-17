@@ -24,10 +24,28 @@ class User < ApplicationRecord
     "Anonymous"
   end
 
-  def search_friends(param)
-    return User.none unless param.present?
-    User.where("first_name LIKE ? OR last_name LIKE ? OR email LIKE ?",
-               "%#{param}%", "%#{param}%", "%#{param}%")
-         .where.not(id: id)
+  def self.first_name_matches(param)
+    where("first_name LIKE ?", "%#{param}%")
+  end
+
+  def self.last_name_matches(param)
+    where("last_name LIKE ?", "%#{param}%")
+  end
+
+  def self.email_matches(param)
+    where("email LIKE ?", "%#{param}%")
+  end
+
+  def self.search(param)
+    return none unless param.present?
+    (first_name_matches(param) + last_name_matches(param) + email_matches(param)).uniq
+  end
+
+  def except_current_user(users)
+    users.reject { |user| user == self }
+  end
+
+  def not_friends_with?(user_id)
+    !friends.where(id: user_id).exists?
   end
 end

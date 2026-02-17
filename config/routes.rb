@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :user_stocks, only: [:create, :destroy]
   resources :friendships, only: [:create, :destroy]
   devise_for :users
+  resources :users, only: [:index, :show]
   get "up" => "health#show", as: :rails_health_check
   root "welcome#index"
   get "my_portfolio", to: "users#my_portfolio"

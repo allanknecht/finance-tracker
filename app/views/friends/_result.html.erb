@@ -1,11 +1,21 @@
-<% if @friend %>
+<% if @friends_found.present? %>
   <div class="card card-header results-block">
-    <strong>Name: </strong> <%= @friend.full_name %>
-    <strong>Email: </strong> <%= @friend.email %>
-    <% if current_user.friends.include?(@friend) %>
-      <span class="badge badge-secondary">Already your friend</span>
-    <% else %>
-      <%= link_to 'Add Friend', friendships_path(friend: @friend.id), class: 'btn btn-sm btn-success', method: :post %>
+    <% @friends_found.each do |friend| %>
+      <div class="d-flex justify-content-between align-items-center py-1">
+        <div class="mr-3">
+          <strong>Name: </strong> <%= friend.full_name %>
+          <strong>Email: </strong> <%= friend.email %>
+        </div>
+        <div class="ml-auto flex-shrink-0 text-right" style="min-width: 250px;">
+          <%= link_to 'View Profile', user_path(friend), class: 'btn btn-sm btn-primary mr-1' %>
+          <% friendship = current_user.friendships.find_by(friend_id: friend.id) %>
+          <% if friendship %>
+            <%= link_to 'Unfollow', friendship_path(friendship), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger', style: 'width: 130px; text-align: center;' %>
+          <% else %>
+            <%= link_to 'Follow', friendships_path(friend: friend.id), class: 'btn btn-sm btn-success', method: :post, style: 'width: 130px; text-align: center;' %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 <% end %>

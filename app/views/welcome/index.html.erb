@@ -1,5 +1,28 @@
-<h1>Welcome to Finance Tracker</h1>
+<% if current_user %>
+  <h1>Welcome back, <%= current_user.full_name %>!</h1>
 
-<p>This is the finance tracker app from the Complete Ruby on Rails Developer course.</p>
-
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <div class="row mt-4">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title"><%= current_user.stocks.count %></h5>
+          <p class="card-text">Stocks Tracked</p>
+          <%= link_to 'My Portfolio', my_portfolio_path, class: 'btn btn-success btn-sm' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title"><%= current_user.friends.count %></h5>
+          <p class="card-text">Following</p>
+          <%= link_to 'My Friends', my_friends_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <h1>Welcome to Finance Tracker</h1>
+  <p>This is the finance tracker app from the Complete Ruby on Rails Developer course.</p>
+  <p><%= link_to "Sign in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to get started!</p>
+<% end %>

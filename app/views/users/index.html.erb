@@ -1,0 +1,33 @@
+<h1>All Users</h1>
+
+<div class="row">
+  <div class="col-sm-9">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% next if user == current_user %>
+          <tr>
+            <th scope="row"><%= user.full_name %></th>
+            <td><%= user.email %></td>
+            <td>
+              <%= link_to 'View Profile', user_path(user), class: 'btn btn-sm btn-primary mr-1' %>
+              <% friendship = current_user.friendships.find_by(friend_id: user.id) %>
+              <% if friendship %>
+                <%= link_to 'Unfollow', friendship_path(friendship), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+              <% else %>
+                <%= link_to 'Follow', friendships_path(friend: user), method: :post, class: 'btn btn-sm btn-success' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
