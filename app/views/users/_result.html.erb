@@ -3,5 +3,12 @@
     <strong>Symbol: </strong> <%= @stock.ticker %>
     <strong>Name: </strong> <%= @stock.name %>
     <strong>Price: </strong> <%= @stock.last_price %>
+    <% if !current_user.under_stock_limit? %>
+      <span class="badge badge-warning">You are already tracking 10 stocks</span>
+    <% elsif current_user.stock_already_tracked?(@stock.ticker) %>
+      <span class="badge badge-secondary">You are already tracking this stock</span>
+    <% else %>
+      <%= link_to 'Add to Portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), class: 'btn btn-sm btn-success', method: :post %>
+    <% end %>
   </div>
 <% end %>

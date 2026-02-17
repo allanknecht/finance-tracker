@@ -22,3 +22,14 @@
 <div id="results">
   <%= render 'users/result' %>
 </div>
+<% if @tracked_stocks.any? %>
+  <%= render 'stocks/list' %>
+<% else %>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="alert alert-info">
+        No stocks have been added yet.
+      </div>
+    </div>
+  </div>
+<% end %>

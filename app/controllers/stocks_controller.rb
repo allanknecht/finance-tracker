@@ -6,7 +6,7 @@ class StocksController < ApplicationController
         @stock = nil
         flash.now[:alert] = "The API rate limit has been reached. Please try again tomorrow."
       elsif @stock
-        # Stock found, no message needed
+        @tracked = current_user.stock_already_tracked?(@stock.ticker)
       else
         flash.now[:alert] = "Please enter a valid symbol to search"
       end
