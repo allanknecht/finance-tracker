@@ -14,7 +14,7 @@ class StocksController < ApplicationController
       flash.now[:alert] = "Please enter a symbol to search"
     end
     respond_to do |format|
-      format.js { render partial: "users/result" }
+      format.js { render partial: "stocks/result" }
     end
   end
 end

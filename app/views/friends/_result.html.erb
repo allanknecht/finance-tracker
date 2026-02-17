@@ -1,0 +1,11 @@
+<% if @friend %>
+  <div class="card card-header results-block">
+    <strong>Name: </strong> <%= @friend.full_name %>
+    <strong>Email: </strong> <%= @friend.email %>
+    <% if current_user.friends.include?(@friend) %>
+      <span class="badge badge-secondary">Already your friend</span>
+    <% else %>
+      <%= link_to 'Add Friend', friendships_path(friend: @friend.id), class: 'btn btn-sm btn-success', method: :post %>
+    <% end %>
+  </div>
+<% end %>

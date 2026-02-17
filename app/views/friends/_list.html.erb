@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-9">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.friendships.each do |friendship| %>
+          <tr>
+            <th scope="row"><%= friendship.friend.full_name %></th>
+            <td><%= friendship.friend.email %></td>
+            <td><%= link_to 'Unfollow', friendship_path(friendship), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
