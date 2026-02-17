@@ -28,6 +28,6 @@ class User < ApplicationRecord
     return User.none unless param.present?
     User.where("first_name LIKE ? OR last_name LIKE ? OR email LIKE ?",
                "%#{param}%", "%#{param}%", "%#{param}%")
-      .where.not(id: id)
+         .where.not(id: id)
   end
 end
